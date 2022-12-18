@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credit Card</title>
+  <link rel="stylesheet" href="creditCard.css">
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="creditCard">
+      <div class="left">
+        <div class="card cardFront">
+          <p class="name"></p>
+          <p class="number"></p>
+          <p class="expiry">
+            <span class="month"></span> 
+            
+            <span class="year"></span>
+          </p>
+        </div>
+        <div class="card cardBack">
+          <div class="cvvDiv">
+            <p class="cvv"></p>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <form action="" method="post">
+          <input id="name" type="text" placeholder="Enter your full name"><br>
+          <input id="number" type="text" placeholder="Enter card number" ><br>
+       
+          <select name="" id= "expiryMonth">
+            <option value="" selected disabled>Select Month</option>
+          </select>
+          <select name="" id="expiryYear">
+            <option value="" selected disabled>Select Year</option>
+          </select> <br>
+          <input id="cvv" type="text" placeholder="CVV"><br>
+          <input id="submitbtn" type="button" value="Submit">
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    window.onload = start;
+
+    let Month = document.querySelector("#expiryMonth")
+    
+    let option = document.createElement("option")
+
+    
+
+    function start(){
+      
+        for( let i=1; i<=12;i++){
+          let option= document.createElement("option")
+          let span= document.createElement("span")
+          
+          if(i<=9){
+            option.appendChild(span)
+          Month.appendChild(option)
+          span.innerHTML= "0" + i
+          }
+          else{
+            option.appendChild(span)
+          Month.appendChild(option)
+          span.innerHTML= i
+
+          } 
+      }
+      let Year = document.querySelector("#expiryYear")
+      for( let i=2035; i>=2000;i--){
+          let option= document.createElement("option")
+          let span= document.createElement("span")
+          
+          
+            option.appendChild(span)
+          Year.appendChild(option)
+          span.innerHTML= i
+
+          }
+      }
+let submitbtn=document.querySelector("#submitbtn")
+
+submitbtn.onclick = ()=>{
+
+  let inpname=document.querySelector("#name")
+  let putname=document.querySelector(".name")
+  
+  putname.innerHTML = inpname.value
+
+   let inpnumber=document.querySelector("#number")
+  let putnumber=document.querySelector(".number")
+  
+
+      
+
+      putnumber.innerHTML = inpnumber.value
+
+    
+ 
+
+  let inpmonth=document.querySelector("#expiryMonth")
+  let putmonth =document.querySelector(".month")
+  
+  putmonth.innerHTML = inpmonth.value
+
+  let inpyear=document.querySelector("#expiryYear")
+  let putyear =document.querySelector(".year")
+  
+  putyear.innerHTML = inpyear.value
+
+  let inpcvv=document.querySelector("#cvv")
+  let putcvv =document.querySelector(".cvv")
+  
+  putcvv.innerHTML = inpcvv.value
+  
+  // document.write("Thanku for submit....")
+
+
+}
+
+
+
+  </script>
+  
+</body>
+
+</html>
