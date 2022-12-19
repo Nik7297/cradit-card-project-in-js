@@ -119,3 +119,18 @@
   border: none;
 
 }
+
+.thanks{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: xx-large;
+  font-weight: bold;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.thanks:hover{
+  color: #E55D87;
+  
+}

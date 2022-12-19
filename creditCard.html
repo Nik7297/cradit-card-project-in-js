@@ -42,7 +42,9 @@
           <input id="cvv" type="text" placeholder="CVV"><br>
           <input id="submitbtn" type="button" value="Submit">
         </form>
+        
       </div>
+      <div class="thanks"></div>
     </div>
   </div>
 
@@ -121,7 +123,16 @@ submitbtn.onclick = ()=>{
   
   putcvv.innerHTML = inpcvv.value
   
-  // document.write("Thanku for submit....")
+
+  let thanks = document.querySelector(".thanks")
+  let rightdiv =document.querySelector(".right")
+  
+  thanks.innerHTML= "Thank You for submit......🙏🏻"
+                rightdiv.remove();
+            
+
+  
+  
 
 
 }
